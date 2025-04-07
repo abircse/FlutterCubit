@@ -8,7 +8,6 @@ This is a simple Flutter application demonstrating how to fetch data from an API
 
 - 🌐 **API Integration** using Dio to make HTTP requests.
 - 🧠 **State Management** with Cubit (from the `flutter_bloc` package).
-- 🚫 **Auto Fetch** on screen load, without needing to click a button.
 - 🎨 **Clean UI** displaying a list of users with avatar, name, and email.
 - 📸 **App Screenshot** included below.
 
