@@ -1,16 +1,35 @@
-# usermanagement
+# 📱 Flutter Cubit API Example
 
-A new Flutter project.
+This is a simple Flutter application demonstrating how to fetch data from an API (`https://reqres.in/api/users`) using **Cubit** for state management and **Dio** for networking.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## ✨ Features
 
-A few resources to get you started if this is your first Flutter project:
+- 🌐 **API Integration** using Dio to make HTTP requests.
+- 🧠 **State Management** with Cubit (from the `flutter_bloc` package).
+- 🚫 **Auto Fetch** on screen load, without needing to click a button.
+- 🎨 **Clean UI** displaying a list of users with avatar, name, and email.
+- 📸 **App Screenshot** included below.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📸 App Screenshot
+
+![User List](assets/screenshots/emulator_home.png)
+
+---
+
+## 🧪 Packages Used
+
+| Package               | Description                        |
+|-----------------------|------------------------------------|
+| [flutter_bloc](https://pub.dev/packages/flutter_bloc) | Provides Cubit for state management. |
+| [dio](https://pub.dev/packages/dio)                | HTTP client for making API requests. |
+
+---
+
+## 🗂️ Project Structure
+
+The folder structure follows the **Clean Architecture** pattern, separating concerns into different layers:
+
