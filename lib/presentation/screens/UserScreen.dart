@@ -12,7 +12,7 @@ class UserScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Users')),
+      appBar: AppBar(title: const Text('User Management App')),
       body: BlocBuilder<UserCubit, UserState>(
         builder: (context, state) {
           if (state is UserLoading) {
