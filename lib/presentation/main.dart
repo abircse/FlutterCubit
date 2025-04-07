@@ -1,32 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:dio/dio.dart';
 import 'package:usermanagement/presentation/screens/UserScreen.dart';
-
-import '../core/ApiClient.dart';
-import '../data/repository/UserRepository.dart';
+import '../core/di/Setup.dart';
 import '../logic/cubit/UserCubit.dart';
 
 void main() {
-  final dio = Dio();
-  final apiClient = ApiClient(dio);
-  final userRepository = UserRepository(apiClient);
-
-  runApp(MyApp(userRepository: userRepository));
+  initializeDependenciesInjection();
+  runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  final UserRepository userRepository;
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
 
-  const MyApp({super.key, required this.userRepository});
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
 
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Cubit API Demo',
+      title: 'CUBIT - API Implementation',
       debugShowCheckedModeBanner: false,
       home: BlocProvider(
-        create: (_) => UserCubit(userRepository),
+        create: (_) => getIt<UserCubit>(),
         child: const UserScreen(),
       ),
     );
