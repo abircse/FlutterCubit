@@ -16,7 +16,7 @@ This is a simple Flutter application demonstrating how to fetch data from an API
 
 ## 📸 App Screenshot
 
-![User List](assets/screenshots/emulator_home.png)
+![User List](assets/screenshots/emulator.png)
 
 ---
 
