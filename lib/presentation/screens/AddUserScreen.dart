@@ -1,0 +1,105 @@
+import 'package:flutter/material.dart';
+
+class AddUserScreen extends StatefulWidget {
+  const AddUserScreen({super.key});
+
+  @override
+  State<AddUserScreen> createState() => _AddUserScreenState();
+}
+
+class _AddUserScreenState extends State<AddUserScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        // leading: IconButton(
+        //   icon: const Icon(Icons.arrow_back_ios),
+        //   onPressed: () {
+        //     Navigator.pop(context); // Goes back to the previous screen
+        //   },
+        // ),
+        title: const Text('Add User'),
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Enter Full Name',
+              textAlign: TextAlign.start,
+              style: TextStyle(fontSize: 18.0),
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                    borderSide:
+                        const BorderSide(color: Colors.grey, width: 2.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                    borderSide:
+                        const BorderSide(color: Colors.black, width: 2.0),
+                  ),
+                  hintText: 'John Doe',
+                  hintStyle: const TextStyle(color: Colors.grey)),
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
+            const Text(
+              'Enter Job Designation',
+              textAlign: TextAlign.start,
+              style: TextStyle(fontSize: 18.0),
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                    borderSide:
+                        const BorderSide(color: Colors.grey, width: 2.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                    borderSide:
+                        const BorderSide(color: Colors.black, width: 2.0),
+                  ),
+                  hintText: 'Software Engineer',
+                  hintStyle: const TextStyle(color: Colors.grey)),
+            ),
+            const SizedBox(height: 15.0),
+            InkWell(
+              onTap: () {
+                // Your tap logic
+              },
+              borderRadius: BorderRadius.circular(15.0), // Match with Material
+              child: Ink(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15.0),
+                  color: Colors.black,
+                ),
+                child: Container(
+                  width: double.infinity,
+                  height: 70.0,
+                  alignment: Alignment.center,
+                  child: const Text(
+                    "Submit",
+                    style: TextStyle(color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}

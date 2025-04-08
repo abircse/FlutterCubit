@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:usermanagement/presentation/screens/UserScreen.dart';
+import 'package:usermanagement/presentation/screens/AddUserScreen.dart';
 import '../core/di/Setup.dart';
 import '../logic/cubit/UserCubit.dart';
 
@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: BlocProvider(
         create: (_) => getIt<UserCubit>(),
-        child: const UserScreen(),
+        child: const AddUserScreen(),
       ),
     );
   }
