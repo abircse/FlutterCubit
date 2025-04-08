@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class AddUserScreen extends StatefulWidget {
-  const AddUserScreen({super.key});
+class UpdateUserScreen extends StatefulWidget {
+  const UpdateUserScreen({super.key});
 
   @override
-  State<AddUserScreen> createState() => _AddUserScreenState();
+  State<UpdateUserScreen> createState() => _UpdateUserScreenState();
 }
 
-class _AddUserScreenState extends State<AddUserScreen> {
+class _UpdateUserScreenState extends State<UpdateUserScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add User'),
+        title: const Text('Update User'),
         centerTitle: true,
       ),
       body: Padding(
@@ -85,7 +85,7 @@ class _AddUserScreenState extends State<AddUserScreen> {
                   height: 65.0,
                   alignment: Alignment.center,
                   child: const Text(
-                    "Submit",
+                    "Update",
                     style: TextStyle(color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.bold),
                   ),
                 ),

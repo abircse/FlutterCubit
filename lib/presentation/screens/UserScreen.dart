@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:usermanagement/presentation/screens/AddUserScreen.dart';
+import 'package:usermanagement/presentation/screens/UpdateUserScreen.dart';
 
 import '../../data/model/UserModel.dart';
 import '../../logic/cubit/UserCubit.dart';
@@ -39,6 +40,12 @@ class _UserScreenState extends State<UserScreen> {
                       CircleAvatar(backgroundImage: NetworkImage(user.avatar)),
                   title: Text('${user.firstName} ${user.lastName}'),
                   subtitle: Text(user.email),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const UpdateUserScreen()),
+                    );
+                  },
                 );
               },
             );
