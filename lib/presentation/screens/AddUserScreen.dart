@@ -12,12 +12,6 @@ class _AddUserScreenState extends State<AddUserScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // leading: IconButton(
-        //   icon: const Icon(Icons.arrow_back_ios),
-        //   onPressed: () {
-        //     Navigator.pop(context); // Goes back to the previous screen
-        //   },
-        // ),
         title: const Text('Add User'),
         centerTitle: true,
       ),

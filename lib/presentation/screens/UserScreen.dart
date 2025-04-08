@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:usermanagement/presentation/screens/AddUserScreen.dart';
 
 import '../../data/model/UserModel.dart';
 import '../../logic/cubit/UserCubit.dart';
 import '../../logic/state/UserState.dart';
 
-class UserScreen extends StatelessWidget {
-
+class UserScreen extends StatefulWidget {
   const UserScreen({super.key});
+
+  @override
+  State<UserScreen> createState() => _UserScreenState();
+}
+
+class _UserScreenState extends State<UserScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    context.read<UserCubit>().getUsers();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +35,8 @@ class UserScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 User user = state.users[index];
                 return ListTile(
-                  leading: CircleAvatar(backgroundImage: NetworkImage(user.avatar)),
+                  leading:
+                      CircleAvatar(backgroundImage: NetworkImage(user.avatar)),
                   title: Text('${user.firstName} ${user.lastName}'),
                   subtitle: Text(user.email),
                 );
@@ -36,10 +49,14 @@ class UserScreen extends StatelessWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => context.read<UserCubit>().getUsers(),
-        child: const Icon(Icons.download),
+        onPressed: () => {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const AddUserScreen()),
+          )
+        },
+        child: const Icon(Icons.add_rounded),
       ),
     );
   }
 }
-
